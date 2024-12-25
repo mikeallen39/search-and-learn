@@ -36,6 +36,7 @@ class Config:
     hub_dataset_id: str = None
     overwrite_hub_revision: bool = False
     apply_voting: bool = True
+    cache_dir: str = None
 
     # Dataset Related Options
     dataset_name: str = "HuggingFaceH4/MATH-500"

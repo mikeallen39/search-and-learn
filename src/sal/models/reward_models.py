@@ -135,12 +135,14 @@ class RLHFFlow(PRM):
         self, **model_kwargs
     ) -> tuple[PreTrainedModel, PreTrainedTokenizer]:
         tokenizer = AutoTokenizer.from_pretrained(
-            "RLHFlow/Llama3.1-8B-PRM-Deepseek-Data"
+            "RLHFlow/Llama3.1-8B-PRM-Deepseek-Data",
+            cache_dir=self.search_config.cache_dir,
         )
         model = AutoModelForCausalLM.from_pretrained(
             "RLHFlow/Llama3.1-8B-PRM-Deepseek-Data",
             device_map="auto",
             torch_dtype=torch.bfloat16,
+            cache_dir=self.search_config.cache_dir,
             **model_kwargs,
         ).eval()
         tokenizer.padding_side = "right"
