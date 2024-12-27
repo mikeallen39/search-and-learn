@@ -24,7 +24,7 @@ from sal.utils.hub import get_dataset_revisions
 @dataclass
 class Config:
     approach: Literal["best_of_n", "beam_search", "dvts"] = "best_of_n"
-    model_path: str = "meta-llama/Llama-3.2-1B-Instruct"
+    model_path: str = "Qwen/Qwen2.5-1.5B-Instruct"
     gpu_memory_utilization: float = (
         0.5  # vllm is allocated 0.5 of GPU memory, the PRM uses the rest
     )
